@@ -6,10 +6,10 @@ public class GameField extends JPanel {
     private final int ELEMENT_SIZE = 20;
     private final int MAX_ELEMENTS = 1024;
     private Image snakeDot;
-    private Image prey;
+    private Image food;
     private Image poison;
-    private int preyX;
-    private int preyY;
+    private int foodX;
+    private int foodY;
     private int[] x = new int[MAX_ELEMENTS];
     private int[] y = new int[MAX_ELEMENTS];
     private int snakeSize;
@@ -26,11 +26,11 @@ public class GameField extends JPanel {
     }
 
     public void loadImages(){
-        ImageIcon iiSnake = new ImageIcon("snakeDot.png");
-        snakeDot = iiSnake.getImage();
-        ImageIcon iiPrey = new ImageIcon("prey.png");
-        prey = iiPrey.getImage();
-        ImageIcon iiPoison = new ImageIcon("poison.png");
-        poison = iiPoison.getImage();
+        ImageIcon imgSnake = new ImageIcon("snakeDot.png");
+        snakeDot = imgSnake.getImage();
+        ImageIcon imgFood = new ImageIcon("food.png");
+        food = imgFood.getImage();
+        ImageIcon imgPoison = new ImageIcon("poison.png");
+        poison = imgPoison.getImage();
     }
 }
