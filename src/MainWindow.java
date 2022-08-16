@@ -3,7 +3,7 @@ import javax.swing.*;
 public class MainWindow extends JFrame {
     public MainWindow(){
         setTitle("Simple Snake");
-        setSize(640,640);
+        setSize(640,665);
         setLocation(640,210);
         add(new GameField());
         setVisible(true);
