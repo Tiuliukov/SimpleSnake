@@ -4,12 +4,9 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5701523a-fc82-4a9d-904d-94870a7b3627" name="Changes" comment="">
+    <list default="true" id="5701523a-fc82-4a9d-904d-94870a7b3627" name="Changes" comment="Add assets">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeDot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/food.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660496312015</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add assets">
+      <created>1660659706983</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1660659706983</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,6 +113,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add assets (snakeDot, prey)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add assets (snakeDot, prey)" />
+    <MESSAGE value="Add assets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add assets" />
   </component>
 </project>

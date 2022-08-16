@@ -30,6 +30,8 @@ public class GameField extends JPanel implements ActionListener {
         setBackground(Color.black);
         loadImages();
         initGame();
+        addKeyListener(new FieldKeyListener());
+        setFocusable(true);
     }
 
     public void initGame(){
@@ -75,6 +77,57 @@ public class GameField extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(inGame){
+            move();
+        }
         repaint();
     }
+
+    public void move(){
+        for (int i = snakeSize; i > 0; i--) {
+            x[i] = x[i-1];
+            y[i] = y[i-1];
+        }
+        if(left){
+            x[0] -= ELEMENT_SIZE;
+        }
+        if(right){
+            x[0] += ELEMENT_SIZE;
+        } if(up){
+            y[0] -= ELEMENT_SIZE;
+        } if(down){
+            y[0] += ELEMENT_SIZE;
+        }
+    }
+
+    class FieldKeyListener extends KeyAdapter{
+        @Override
+        public void keyPressed(KeyEvent e) {
+            super.keyPressed(e);
+            int key = e.getKeyCode();
+            if(key == KeyEvent.VK_LEFT && !right){
+                left = true;
+                up = false;
+                down = false;
+            }
+            if(key == KeyEvent.VK_RIGHT && !left){
+                right = true;
+                up = false;
+                down = false;
+            }
+
+            if(key == KeyEvent.VK_UP && !down){
+                right = false;
+                up = true;
+                left = false;
+            }
+            if(key == KeyEvent.VK_DOWN && !up){
+                right = false;
+                down = true;
+                left = false;
+            }
+        }
+    }
+
+
 }
