@@ -75,14 +75,6 @@ public class GameField extends JPanel implements ActionListener {
         }
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if(inGame){
-            move();
-        }
-        repaint();
-    }
-
     public void move(){
         for (int i = snakeSize; i > 0; i--) {
             x[i] = x[i-1];
@@ -99,6 +91,45 @@ public class GameField extends JPanel implements ActionListener {
             y[0] += ELEMENT_SIZE;
         }
     }
+
+    public void checkFood(){
+        if(x[0] == foodX && y[0] == foodY){
+            snakeSize++;
+            createFood();
+        }
+    }
+
+    public void checkCollisions(){
+        for (int i = snakeSize; i >0 ; i--) {
+            if(i>4 && x[0] == x[i] && y[0] == y[i]){
+                inGame = false;
+            }
+        }
+
+        if(x[0]>SIZE){
+            inGame = false;
+        }
+        if(x[0]<0){
+            inGame = false;
+        }
+        if(y[0]>SIZE){
+            inGame = false;
+        }
+        if(y[0]<0){
+            inGame = false;
+        }
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(inGame){
+            checkFood();
+            checkCollisions();
+            move();
+        }
+        repaint();
+    }
+
 
     class FieldKeyListener extends KeyAdapter{
         @Override
@@ -128,6 +159,4 @@ public class GameField extends JPanel implements ActionListener {
             }
         }
     }
-
-
 }
